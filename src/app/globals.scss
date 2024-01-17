@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Adamina&family=Alfa+Slab+One&family=Inter&family=Ubuntu:wght@700&display=swap');
+
+:root {
+    --primary-color: var(--red-primary);
+    --text-primary: black;
+    --navbar: var(--black);
+    --navbar-hover: var(--gray-darkest);
+    --navbar-hover-dropdown: var(--gray-dark);
+    --button: var(--red-button);
+    --sidebar-width: 17rem;
+
+    --white: #ffffff;
+    --gray-dark: #222;
+    --gray-darkest: #272626;
+    --alabaster: #f8f6e9;
+    --red-primary: #cf352a;
+    --red-button: #ff3311;
+    --red-dark: #f01e29;
+    --red-alfa: #fd4334;
+    --black: #000;
+    --purple: #800080;
+    --green: #008000;
+    --navy: #016795;
+    --gold: #edb700;
+}
+
+[data-theme='dark'] {
+    --background: black;
+    --text-primary: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(194, 194, 194);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(164, 164, 164);
+}
+
+h1 {
+    font-family: 'Alfa Slab One';
+}
+
+h5,
+span,
+h4,
+ul,
+li {
+    font-family: 'Inter';
+}
+
+header,
+p,
+input,
+h2,
+h6 {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h3,
+button {
+    font-family: 'Adamina';
+}
+
+.box-per {
+    background: linear-gradient(197deg, black 50%, transparent 50%);
+    box-sizing: content-box;
+    border: 1px;
+    height: 500px;
+}
+
+.rotate {
+    transform: rotate(17deg);
+    padding-top: 190px;
+}
+
+.line-pur {
+    width: 751px;
+    height: 0px;
+    border: 2px solid #800080;
+    transform: rotate(0deg);
+}
+
+.line-green {
+    width: 751px;
+    height: 0px;
+    border: 2px solid #008000;
+    transform: rotate(0deg);
+}
+
+.line-navy {
+    width: 751px;
+    height: 0px;
+    border: 2px solid #016795;
+    transform: rotate(0deg);
+}
+
+.line-gold {
+    width: 751px;
+    height: 0px;
+    border: 2px solid #edb700;
+    transform: rotate(0deg);
+}
+
+.box {
+    background-color: white;
+    box-sizing: content-box;
+    border: 1px;
+    border-radius: 50px;
+}
+
+.txBox {
+    width: 550px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50px;
+    background-color: white;
+    text-align: start;
+}
+
+.list {
+    margin-top: 48px;
+    padding-bottom: 48px;
+    margin-left: 112px;
+    margin-right: 112px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    .card {
+        max-width: 500px;
+
+        &:nth-child(even) {
+            align-self: flex-end;
+        }
+    }
+}
+
+ul.menu li {
+    text-align: center;
+    height: 30px;
+    padding: 4px 20px;
+}
+
+ul.menu li:hover {
+    background-color: #272626;
+    color: white;
+}
+
+/*dropdown*/
+
+ul.menu li ul.menu-sub {
+    position: absolute;
+    background: black;
+    right: 32px;
+    display: none;
+}
+
+ul.menu li ul.menu-sub li {
+    width: 205px;
+    padding: 20px 40px 40px 60px;
+    display: flex;
+    position: relative;
+}
+
+ul.menu li:hover ul.menu-sub {
+    display: block;
+}
