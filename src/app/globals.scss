@@ -25,6 +25,7 @@
     --green: #008000;
     --navy: #016795;
     --gold: #edb700;
+    --light-gray: #d9d9d9;
 }
 
 [data-theme='dark'] {
@@ -70,13 +71,21 @@ header,
 p,
 input,
 h2,
-h6 {
+h6,
+a {
     font-family: 'Ubuntu', sans-serif;
 }
 
 h3,
 button {
     font-family: 'Adamina';
+}
+
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .box-per {
@@ -170,16 +179,76 @@ ul.menu li ul.menu-sub {
     position: absolute;
     background: black;
     right: 32px;
+    top: 54px;
     display: none;
 }
 
 ul.menu li ul.menu-sub li {
-    width: 205px;
-    padding: 20px 40px 40px 60px;
+    width: 209px;
+    padding: 10px 40px 30px 60px;
     display: flex;
     position: relative;
 }
 
 ul.menu li:hover ul.menu-sub {
     display: block;
+}
+
+.ro {
+    position: relative;
+    left: 0;
+    top: 280px;
+    margin-left: 0px;
+    transform: rotate(270deg);
+    transform-origin: 0 0;
+}
+.marketing {
+    width: 540px;
+    min-height: 380px;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #000;
+}
+
+.list-marketing {
+    width: 870px;
+    min-height: 220px;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #000;
+}
+
+div.list-marketing {
+    list-style: none;
+}
+
+div.list-marketing ul li::before {
+    content: '\2022';
+    color: red;
+    display: inline-block;
+    width: 2rem;
+}
+
+.resultBox {
+    min-height: 460px;
+    padding-top: 10px;
+    background-color: #d9d9d9;
+    text-align: start;
+}
+
+.flex-line {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-end;
+
+    .line-page {
+        border: 1px solid red;
+        transform: rotate(270deg);
+        transform-origin: 0 0;
+        height: 100%;
+    }
 }
