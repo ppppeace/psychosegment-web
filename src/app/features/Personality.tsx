@@ -6,7 +6,7 @@ import { tree } from 'next/dist/build/templates/app-page';
 
 function Personality() {
     return (
-        <div className='md:container md:mx-auto'>
+        <div>
             <div className='box-per w-full '>
                 <h2 className='text-primary text-4xl rotate flex justify-center'>Personalized Sales: Your Perfect Approach Unleashed</h2>
             </div>

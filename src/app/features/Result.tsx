@@ -2,7 +2,7 @@ import React from 'react';
 
 function Result() {
     return (
-        <div className='container'>
+        <div>
             <div className='ml-20 my-2 grid grid-cols-3 gap-8'>
                 <div>
                     <h1 className='text-2xl rotate-topic ro font-semibold mt-6'>PsychoSegment Insight Hub</h1>

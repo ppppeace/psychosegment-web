@@ -4,7 +4,7 @@ import Triangle from '@/assets/web_red_element.png';
 
 function Welcome() {
     return (
-        <div className='md:container md:mx-auto w-full'>
+        <div className='w-full'>
             <div className='text-center my-24 '>
                 <div className='text-2xl font-semibold' id='home'>
                     WELCOME TO THE
