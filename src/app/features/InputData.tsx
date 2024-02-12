@@ -7,11 +7,11 @@ import Button from '../components/button/Button';
 
 function InputData() {
     //const [context] = userContext("");
-
+    //from-transparent
     return (
-        <div className='text-center bg-gradient-to-b from-transparent from-50% to-[var(--black)] to-50% '>
+        <div className='text-center color-bg-input'>
             <div className='box '>
-                <h3 className='text-2xl pt-10 font-medium'>
+                <h3 className='text-3xl pt-10 font-medium'>
                     Get To Know Yourself Better <br /> With MBTI Prediction
                 </h3>
                 <div className='grid grid-cols-6 gap-4'>

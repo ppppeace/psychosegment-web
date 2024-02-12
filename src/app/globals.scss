@@ -28,6 +28,10 @@
     --light-gray: #d9d9d9;
 }
 
+.color-bg-input {
+    background-image: conic-gradient(#f01e29 90deg, #000 90deg, #000 270deg, #f8f6e9 -90deg);
+}
+
 [data-theme='dark'] {
     --background: black;
     --text-primary: white;
