@@ -169,8 +169,7 @@ button {
 
 ul.menu li {
     text-align: center;
-    height: 30px;
-    padding: 4px 20px;
+    padding: 16px 20px;
 }
 
 ul.menu li:hover {
@@ -179,18 +178,18 @@ ul.menu li:hover {
 }
 
 /*dropdown*/
-
 ul.menu li ul.menu-sub {
     position: absolute;
     background: black;
     right: 32px;
     top: 54px;
     display: none;
+    z-index: 1;
 }
 
 ul.menu li ul.menu-sub li {
     width: 209px;
-    padding: 10px 40px 30px 60px;
+    padding: 20px 60px 20px 60px;
     display: flex;
     position: relative;
 }
