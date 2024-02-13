@@ -5,18 +5,20 @@ import InputData from './features/InputData';
 import Percent from './features/Percent';
 import Personality from './features/Personality';
 import Footer from './components/footer/Footer';
+import AnalysisPage from './analysis/page';
 
 type Props = {};
 
 const page = (props: Props) => {
     return (
         <div className='bg-[var(--alabaster)]'>
-            <Navbar />
+            {/* <Navbar />
             <Welcome />
             <InputData />
             <Percent />
             <Personality />
-            <Footer />
+            <Footer /> */}
+            <AnalysisPage/>
         </div>
     );
 };

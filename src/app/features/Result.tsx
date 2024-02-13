@@ -1,6 +1,44 @@
 import React from 'react';
+import { OkPacket, RowDataPacket } from 'mysql2';
+import { db } from '@/config/database';
 
-function Result() {
+
+interface MyData extends RowDataPacket{
+    type: string,
+    name: string,
+    style:string,
+    detail: string,
+    marketing:string
+}
+
+export const getData = () => {
+    const test:String = "INFJ"
+    return new Promise<MyData[]>((resolve, reject) => {
+        db.query<MyData[]>('SELECT * FROM data_mbti where type =?',[test], (err:any, result:any) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result);
+                
+            }
+        });
+    });
+};
+
+
+// export async function GET(req: Request, res: Response) {
+//     try {
+//         const products = await getData();
+//         return Response.json({ message: 'success', data: products });
+//     } catch (error) {
+//         console.log('error', error);
+//         return Response.json({ message: 'error', data: error });
+//     }
+// }
+
+async function Result() {
+    const products = await getData();
+    console.log(products)
     return (
         <div>
             <div className='ml-20 my-2 grid grid-cols-3 gap-8'>
@@ -15,8 +53,7 @@ function Result() {
                     </div>
                     <div className='type font-semibold text-5xl text-[var(--red-primary)]'>
                         <h1>
-                            The
-                            <br /> Visionary
+                            {products[0].name}
                         </h1>
                     </div>
                     {/* <div className='flex-line'>
@@ -26,22 +63,17 @@ function Result() {
                 <div>
                     <div className='marketing text-xl text-white'>
                         <h5 className='m-5'>
-                            Enthusiastically imaginative and endlessly curious, the vibrant personalities of ENTPs light up any room. With an
-                            infectious zest for life, they are the spirited architects of innovation, weaving creativity into the fabric of every
-                            idea. Their charming charisma is a beacon, drawing others into the captivating world of endless possibilities. Embrace the
-                            journey with an ENTP and explore the boundless horizons of imagination and ingenuity!
+                            {products[0].detail}
                         </h5>
                     </div>
                     <div className='col-start-2 list-marketing text-xl text-white'>
                         <ul className='m-5 list-outside'>
-                            <li>Innovative Insights: Capture the ENTPs imaginative spirit.</li>
-                            <li>Groundbreaking Solutions: Showcase your offering as a trailblazing answer.</li>
-                            <li>Fuel Discussion: Encourage conversations about its limitless applications and future possibilities.</li>
+                           {products[0].marketing}
                         </ul>
                     </div>
                 </div>
                 <div className='type font-semibold text-7xl text-[var(--red-primary)]'>
-                    <h1 className='m-5 text-center mt-40'>ENTP</h1>
+                    <h1 className='m-5 text-center mt-40'>{products[0].type}</h1>
                 </div>
             </div>
         </div>
