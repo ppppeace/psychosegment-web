@@ -25,17 +25,6 @@ export const getData = () => {
     });
 };
 
-
-// export async function GET(req: Request, res: Response) {
-//     try {
-//         const products = await getData();
-//         return Response.json({ message: 'success', data: products });
-//     } catch (error) {
-//         console.log('error', error);
-//         return Response.json({ message: 'error', data: error });
-//     }
-// }
-
 async function Result() {
     const products = await getData();
     console.log(products)
@@ -56,9 +45,6 @@ async function Result() {
                             {products[0].name}
                         </h1>
                     </div>
-                    {/* <div className='flex-line'>
-                        <div className='line-page h-full'>s</div>
-                    </div> */}
                 </div>
                 <div>
                     <div className='marketing text-xl text-white'>

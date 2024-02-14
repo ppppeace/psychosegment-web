@@ -12,13 +12,13 @@ type Props = {};
 const page = (props: Props) => {
     return (
         <div className='bg-[var(--alabaster)]'>
-            {/* <Navbar />
+            <Navbar />
             <Welcome />
             <InputData />
             <Percent />
             <Personality />
-            <Footer /> */}
-            <AnalysisPage/>
+            <Footer />
+            {/* <AnalysisPage/> */}
         </div>
     );
 };
