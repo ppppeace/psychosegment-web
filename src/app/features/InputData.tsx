@@ -1,47 +1,43 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import './InputData.scss';
 
-import Percent from './Percent';
-import Button from '../components/button/Button';
-//import { userContext } from "react";
-
 function InputData() {
-    //const [context] = userContext("");
-    //from-transparent
+    const [text, setText] = useState('');
+    const charLimit = 60;
+    const charMin = 40;
     return (
         <div className='text-center color-bg-input'>
             <div className='box '>
                 <h3 className='text-3xl pt-10 font-medium'>
                     Get To Know Yourself Better <br /> With MBTI Prediction
                 </h3>
-                <div className='grid grid-cols-6 gap-4'>
-                    <div className='m-4 col-start-3 col-span-2'>
-                        <textarea
+                <div className='grid grid-cols-12 gap-4'>
+                    <div className='my-4 col-start-5 col-span-4 '>
+                        <input
                             id='sentencs'
                             name='sentencs'
-                            rows={3}
-                            className='block w-full rounded-3xl border-0 py-1.5 px-2 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6'
-                            defaultValue={''}
+                            value={text}
+                            onChange={(e) => setText(e.target.value)}
+                            placeholder='Please input the some sentence...'
+                            maxLength={charLimit}
+                            minLength={charMin}
+                            className='block w-full rounded-3xl border-0 py-4 px-6 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-base sm:leading-6 '
                         />
-                        <div className='mt-8'>
+                        <div className='text-base text-end'>
+                            {text.length}/{charLimit}
+                        </div>
+                        <div className='mt-6 submit shadow-sm  '>
                             <button
+                                disabled={text.length < charMin}
                                 type='submit'
-                                className='text-base rounded-xl bg-[var(--button)] px-5 py-3 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 '
+                                className={text.length < charMin ? 'disabled' : 'enable'} //'text-base rounded-xl bg-[var(--button)] px-5 py-3 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
                             >
                                 Submit
                             </button>
                         </div>
                     </div>
                 </div>
-
-                {/* <div className='center'>
-                    <form action='/prediction.php'>
-                        <input className='tx-16 fontadmina tx-box ' type='text' placeholder='Input long sentences...' />
-                        <p className='pad-2-top'>
-                            <Button>Submit</Button>
-                        </p>
-                    </form>
-                </div> */}
             </div>
         </div>
     );
