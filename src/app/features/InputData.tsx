@@ -4,8 +4,8 @@ import './InputData.scss';
 
 function InputData() {
     const [text, setText] = useState('');
-    const charLimit = 60;
-    const charMin = 40;
+    const charLimit = 120;
+    const charMin = 80;
     return (
         <div className='text-center color-bg-input'>
             <div className='box '>
@@ -13,8 +13,8 @@ function InputData() {
                     Get To Know Yourself Better <br /> With MBTI Prediction
                 </h3>
                 <div className='grid grid-cols-12 gap-4'>
-                    <div className='my-4 col-start-5 col-span-4 '>
-                        <input
+                    <div className='my-4 col-start-4 col-span-6 '>
+                        <textarea
                             id='sentencs'
                             name='sentencs'
                             value={text}
@@ -27,7 +27,7 @@ function InputData() {
                         <div className='text-base text-end'>
                             {text.length}/{charLimit}
                         </div>
-                        <div className='mt-6 submit shadow-sm  '>
+                        <div className='mt-4 submit shadow-sm  '>
                             <button
                                 disabled={text.length < charMin}
                                 type='submit'
