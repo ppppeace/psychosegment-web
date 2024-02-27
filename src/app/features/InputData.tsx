@@ -1,48 +1,34 @@
-import React from 'react';
+"use client"
 import './InputData.scss';
-import Link from 'next/link'
-// import { useRouter } from "next/navigation"
-// import { useState } from "react"
+import React,{ useRef } from 'react';
+import { useFormState, useFormStatus } from 'react-dom';
+import { submitSendData } from '../_action/submit';
 
 import Percent from './Percent';
 import Button from '../components/button/Button';
 
-function InputData() {
-    // const router = useRouter()
+type Props = {}
 
-    // const [link,setLink] = useState('')
-    // const [isLoading,setIsLoading] = useState(false)
-    // return (
-    //     <form className='w-1/2'>
-    //         <label>
-    //             <span>Title</span>
-    //             <input
-    //                 required
-    //                 type='text'
-    //                 onChange={(e)=>setLink(e.target.value)}
-    //                 value={link} />
-    //             <button 
-    //                 className='btn-primary'
-    //                 disabled={isLoading}
-    //                 >
-    //                     {isLoading && <span>Adding...</span>}
-    //                     {!isLoading && <span>Add MBTI</span>}
-    //                 </button>
-    //         </label>
-    //     </form>
-    // )
-
+export default function InputData({}:Props) {
+    const ref = useRef<HTMLFormElement>(null);
+    const [state,formAction] = useFormState(submitSendData,{error:null});
     return (
         <div className='text-center color-bg-input'>
             <div className='box '>
                 <h3 className='text-3xl pt-10 font-medium'>
                     Get To Know Yourself Better <br /> With MBTI Prediction
                 </h3>
+            <form
+                ref={ref}
+                action={async (formData : FormData)=>{
+                ref.current?.reset();
+                formAction(formData);
+            }}>
                 <div className='grid grid-cols-6 gap-4'>
                     <div className='m-4 col-start-3 col-span-2'>
                         <textarea
                             id='sentencs'
-                            name='sentencs'
+                            name='message'
                             rows={3}
                             className='block w-full rounded-3xl border-0 py-1.5 px-2 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6'
                             defaultValue={''}
@@ -57,7 +43,7 @@ function InputData() {
                         </div>
                     </div>
                 </div>
-                <Link href="/about">Go to about</Link>
+                </form>
                 {/* <div className='center'>
                     <form action='/prediction.php'>
                         <input className='tx-16 fontadmina tx-box ' type='text' placeholder='Input long sentences...' />
@@ -71,4 +57,3 @@ function InputData() {
     );
 }
 
-export default InputData;
