@@ -1,6 +1,7 @@
 export interface IPersonality {
     topic: string;
     color: string;
+    line: string;
     list: IPersonalityList[];
 }
 

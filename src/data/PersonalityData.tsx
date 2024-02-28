@@ -2,7 +2,8 @@ import { IPersonality } from '@/type/personality';
 const personality: IPersonality[] = [
     {
         topic: 'Analysis',
-        color: '#800080',
+        color: 'under-line-topic-pur',
+        line: 'line-pur',
         list: [
             {
                 type: 'INTJ',
@@ -32,7 +33,8 @@ const personality: IPersonality[] = [
     },
     {
         topic: 'Diplomats',
-        color: 'decoration-[var(--green)]',
+        color: 'under-line-topic-green',
+        line: 'line-green',
         list: [
             {
                 type: 'INFJ',
@@ -62,7 +64,8 @@ const personality: IPersonality[] = [
     },
     {
         topic: 'Sentinels',
-        color: 'decoration-[var(--navy)]',
+        color: 'under-line-topic-navy',
+        line: 'line-navy ',
         list: [
             {
                 type: 'ISTJ',
@@ -92,7 +95,8 @@ const personality: IPersonality[] = [
     },
     {
         topic: 'Explorers',
-        color: 'decoration-[var(--gold)]',
+        color: 'under-line-topic-gold ',
+        line: 'line-gold',
         list: [
             {
                 type: 'ISTP',

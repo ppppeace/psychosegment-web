@@ -15,9 +15,12 @@ function Personality() {
                     return (
                         <div className='bg-[var(--alabaster)] ' key={index}>
                             {/* style={{ textUnderlinePosition: 'under', textUnderlineOffset: '16px', textDecorationColor: 'item.color' }} */}
-                            <h2 className='text-primary text-4xl ml-7 underline underline-offset-[16px]' id={item.topic}>
-                                {item.topic}
-                            </h2>
+                            <div className='text-primary text-4xl ml-7 '>
+                                <div className={item.color} id={item.topic}>
+                                    <h2>{item.topic}</h2>
+                                </div>
+                            </div>
+
                             <div className='list'>
                                 {item.list.map((type, num) => {
                                     return (
@@ -39,7 +42,9 @@ function Personality() {
                                     );
                                 })}
                             </div>
-                            <div className='mt-16 line-navy ml-96 mb-16'></div>
+                            <div className='my-16 ml-96'>
+                                <div className={item.line}></div>
+                            </div>
                         </div>
                     );
                 })}
