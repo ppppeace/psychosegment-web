@@ -268,15 +268,7 @@ div.list-marketing ul li::before {
     text-align: start;
 }
 
-.flex-line {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: flex-end;
-
-    .line-page {
-        border: 1px solid var(--red-button);
-        transform: rotate(270deg);
-        transform-origin: 0 0;
-        height: 100%;
-    }
+.line-page {
+    border-left: 1px solid var(--black);
+    height: 100%;
 }
