@@ -268,7 +268,19 @@ div.list-marketing ul li::before {
     text-align: start;
 }
 
-.line-page {
-    border-left: 1px solid var(--black);
+.percent-bar-container {
+    width: 100%;
+    height: 1px; /* กำหนดความสูงของ percent bar */
+    background-color: var(--white); /* สีพื้นหลัง */
+    border-radius: 5px; /* กำหนดรูปร่างของ percent bar */
+    overflow: hidden; /* ให้เกิดการซ่อนส่วนเกินของ percent bar */
+}
+
+.percent-bar {
     height: 100%;
+    background-color: var(--red-alfa); /* สีของ progress bar */
+}
+
+.right-more {
+    transform: rotateY(180deg);
 }
