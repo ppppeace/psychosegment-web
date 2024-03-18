@@ -231,7 +231,7 @@ ul.menu li:hover ul.menu-sub {
     transform-origin: 0 0;
 }
 .marketing {
-    width: 540px;
+    max-width: 540px;
     min-height: 380px;
     margin-top: 25px;
     display: flex;

@@ -1,31 +1,35 @@
+import Image from 'next/image';
 import React from 'react';
+import picBac from '@/assets/bac.png';
 
 function Result() {
     return (
         <div>
             <div className='ml-20 my-2 grid grid-cols-3 gap-4'>
-                <div>
-                    <h1 className='text-2xl rotate-topic ro font-semibold mt-6'>PsychoSegment Insight Hub</h1>
-                    <div className='ml-24 row-span-2'>
-                        <div className='resultBox mr-10 '>
-                            <div className='m-5'>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Repellat aliquam deserunt harum rem earum assumenda perspiciatis expedita. Aliquid distinctio tenetur fugiat qui
-                                recusandae obcaecati voluptates.
+                <div className='flex'>
+                    <div>
+                        <div>
+                            <h1 className='text-2xl rotate-topic ro font-semibold mt-6'>PsychoSegment Insight Hub</h1>
+                            <div className='ml-20 row-span-2 '>
+                                <Image src={picBac} alt='' className=' h-max w-max' width={550} height={1000} layout='responsive' />
+                                {/* <div className='resultBox mr-10 '>
+                                <div className='m-5'></div>
+                                </div> */}
                             </div>
                         </div>
+                        <div className='type font-semibold text-5xl text-[var(--red-primary)] m-0'>
+                            <h1>
+                                The
+                                <br /> Visionary
+                            </h1>
+                        </div>
                     </div>
-                    <div className='type font-semibold text-5xl text-[var(--red-primary)]'>
-                        <h1>
-                            The
-                            <br /> Visionary
-                        </h1>
-                    </div>
-                </div>
-                <div className='col-start-2 flex '>
+
                     <div className='m-0' style={{ borderLeft: '3px solid black', height: '100%' }}>
                         {/* ตัวอย่างเส้นแนวตั้ง */}
                     </div>
+                </div>
+                <div className='col-start-2 flex '>
                     <div>
                         <div className='flex'>
                             <div className='ml-10 marketing text-xl text-white'>
