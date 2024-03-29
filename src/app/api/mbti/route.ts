@@ -11,15 +11,13 @@ interface MyData extends RowDataPacket{
     marketing:string
 }
 
-interface IRequestMBTI{
-    params: { id: string };
-}
-
-
-export async function GET(request: Request, { params }: IRequestMBTI) {
-    console.log('params id: ', params.id);
+export async function GET(request: Request) {
+    const url = new URL(request.url);
+    const text = url.searchParams.get("text");
+    console.log("I'm here",text)
     try {
-        const products = await getDataID(params.id);
+        const products = await getDataID(text|| "");
+        console.log("I'm product",products)
         return Response.json({data:products})
     } catch (error) {
         console.log('error : get', error);
