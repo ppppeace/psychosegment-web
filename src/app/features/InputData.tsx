@@ -1,31 +1,26 @@
-"use client"
+'use client';
 import './InputData.scss';
-import React,{ useCallback, useRef, useState } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
-import { submitSendData } from '../_action/submit';
-
-import Percent from './Percent';
-import Button from '../components/button/Button';
+import React, { useCallback, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 
-type Props = {}
+type Props = {};
 
-export default function InputData({}:Props) {
+export default function InputData({}: Props) {
     // const ref = useRef<HTMLFormElement>(null);
     // const [state,formAction] = useFormState(submitSendData,{error:null});
-    const [textSearch,setTextSearch] = useState("")
-    const pathname = usePathname()
-    const searchParams = useSearchParams()
+    const [textSearch, setTextSearch] = useState('');
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
     const createQueryString = useCallback(
         (name: string, value: string) => {
-          const params = new URLSearchParams(searchParams.toString())
-          params.set(name, value)
-     
-          return params.toString()
+            const params = new URLSearchParams(searchParams.toString());
+            params.set(name, value);
+
+            return params.toString();
         },
         [searchParams]
-      )
+    );
     return (
         <div className='text-center color-bg-input'>
             <div className='box '>
@@ -37,14 +32,21 @@ export default function InputData({}:Props) {
                         <textarea
                             id='sentencs'
                             name='message'
-                            onChange={e=> setTextSearch(e.target.value)}
+                            onChange={(e) => setTextSearch(e.target.value)}
                             rows={3}
                             className='block w-full rounded-3xl border-0 py-1.5 px-2 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6'
                             defaultValue={''}
                         />
                         <div className='mt-8'>
-                            <Link
+                            {/* <Link
                                 href= { "/analysis" + '?' + createQueryString('search',textSearch)}
+                                className='text-base rounded-xl bg-[var(--button)] px-5 py-3 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 '
+                            >
+                                Submit
+                            </Link> */}
+                            <Link
+                                // href={'/static' + '?' + createQueryString('search', textSearch)}
+                                href={'/staticc/' + textSearch}
                                 className='text-base rounded-xl bg-[var(--button)] px-5 py-3 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 '
                             >
                                 Submit
@@ -52,7 +54,7 @@ export default function InputData({}:Props) {
                         </div>
                     </div>
                 </div>
-            {/* <form
+                {/* <form
                 ref={ref}
                 action={async (formData : FormData)=>{
                 ref.current?.reset();
@@ -90,4 +92,3 @@ export default function InputData({}:Props) {
         </div>
     );
 }
-

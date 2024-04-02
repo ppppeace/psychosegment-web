@@ -20,6 +20,9 @@ def testjson():
     # return  {"message": "This is data from FastAPI"}
     return "hello my name is hwak"
 
+@app.get("/json/{data}")
+def read_item(data: str):
+    return {"data is ": data}
 
 @app.get("/hi")
 def hi(name:str):
