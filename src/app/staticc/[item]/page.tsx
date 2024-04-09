@@ -1,8 +1,18 @@
-// 'use client';
 'use server';
-import React, { useEffect, useState } from 'react';
-// import { useSearchParams } from 'next/navigation';
+import React from 'react';
+import { RowDataPacket } from 'mysql2';
+import { db } from '@/config/database';
 
+interface IResponse {
+    data: MyData;
+}
+interface MyData {
+    type: string;
+    name: string;
+    style: string;
+    detail: string;
+    marketing: string;
+}
 export default async function Fastapi({
     params
 }: {
@@ -14,20 +24,80 @@ export default async function Fastapi({
         const res = await fetch('http://127.0.0.1:3000/json/' + params.item);
         return res.json();
     }
-    // const searchParams = useSearchParams();
-    // const search = searchParams.get('search');
+
+    async function LoadData(type:string) {
+        const res = await fetch('/api/mbti?text=' + type);
+        // const jsonData = (await res.json()) as IResponse;
+        return res.json()
+    }
+
 
     const data = await getData();
-
+    const loadData = await LoadData(evaluateGrade(data["data is"]))
+    
     return (
         <>
-            <div>hi</div>
-            {/* <div>{resultSearch?.name + "i'm here"}</div> */}
-            <div>{data + "i'm here 123"}</div>
-            <div>{JSON.stringify(data, null, 2)}</div>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
-
-            <div>bye</div>
+            <pre>{evaluateGrade(data["data is"])}</pre>
+            {/* <div>{loadData}</div> */}
         </>
     );
+}
+
+function evaluateGrade(data: string): string {
+    let text: string;
+    
+    switch (true) {
+        case data == "0":
+            text = "INTJ";
+            break;
+        case data == "1":
+            text = "INTP";
+            break;
+        case data == "2":
+            text = "ENTJ";
+            break;
+        case data == "3":
+            text = "ENTP";
+            break;
+        case data == "4":
+            text = "INFJ";
+            break;
+        case data == "5":
+            text = "INFP";
+            break;
+        case data == "6":
+            text = "ENFJ";
+            break;
+        case data == "7":
+            text = "ENFP";
+            break;
+        case data == "8":
+            text = "ISTJ";
+            break;
+        case data == "9":
+            text = "ISFJ";
+            break;
+        case data == "10":
+            text = "ESTJ";
+            break;
+        case data == "11":
+            text = "ESFJ";
+            break;
+        case data == "12":
+            text = "ISTP";
+            break;
+        case data == "13":
+            text = "ISFP";
+            break;
+        case data == "14":
+            text = "ESTP";
+            break;
+        case data == "15":
+            text = "ESFP";
+            break;
+        default:
+            text = data;
+            break;
+    }
+    return text;
 }
