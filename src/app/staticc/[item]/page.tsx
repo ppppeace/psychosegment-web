@@ -3,16 +3,15 @@ import React from 'react';
 import { RowDataPacket } from 'mysql2';
 import { db } from '@/config/database';
 
-interface IResponse {
-    data: MyData;
+interface MyData extends RowDataPacket{
+    type: string,
+    name: string,
+    style:string,
+    detail: string,
+    marketing:string
 }
-interface MyData {
-    type: string;
-    name: string;
-    style: string;
-    detail: string;
-    marketing: string;
-}
+
+
 export default async function Fastapi({
     params
 }: {
@@ -26,9 +25,16 @@ export default async function Fastapi({
     }
 
     async function LoadData(type:string) {
-        const res = await fetch('/api/mbti?text=' + type);
-        // const jsonData = (await res.json()) as IResponse;
-        return res.json()
+        return new Promise<MyData>((resolve, reject) => {
+            const type = evaluateGrade(data["data is"]);
+            db.query<MyData[]>('SELECT * FROM data_mbti WHERE type = ?', [type], (err, result) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(result[0]);
+                }
+            });
+        });
     }
 
 
@@ -38,7 +44,11 @@ export default async function Fastapi({
     return (
         <>
             <pre>{evaluateGrade(data["data is"])}</pre>
-            {/* <div>{loadData}</div> */}
+            {loadData && (
+                <div>
+                    <pre>{JSON.stringify(loadData, null, 2)}</pre>
+                </div>
+            )}
         </>
     );
 }
