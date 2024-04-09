@@ -7,7 +7,6 @@ app = FastAPI()
 
 with open('naive_bayes_classifier.pkl', 'rb') as file:
     naive_bayes_classifier = pickle.load(file)
-
 # Load the CountVectorizer
 with open('vectorizer.pkl', 'rb') as file:
     vectorizer = pickle.load(file)
