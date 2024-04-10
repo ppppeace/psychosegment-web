@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import picBac from '@/assets/bac.png';
+import mbti from '@/assets/MBTI.jpg';
 
 function Result() {
     return (
@@ -11,7 +12,7 @@ function Result() {
                         <div>
                             <h1 className='text-2xl rotate-topic ro font-semibold mt-6'>PsychoSegment Insight Hub</h1>
                             <div className='ml-20 row-span-2 '>
-                                <Image src={picBac} alt='' className=' h-max w-max' width={550} height={1000} layout='responsive' />
+                                <Image src={mbti} alt='' className=' h-max w-max' layout='responsive' />
                                 {/* <div className='resultBox mr-10 '>
                                 <div className='m-5'></div>
                                 </div> */}
