@@ -3,7 +3,7 @@ import React from 'react';
 import { RowDataPacket } from 'mysql2';
 import { db } from '@/config/database';
 import Image from 'next/image';
-import picBac from '@/assets/bac.png';
+import picBac from '@/assets/pageTwo.jpg';
 import Navbar from '@/app/components/navbar/Navbar';
 import Footer from '@/app/components/footer/Footer';
 

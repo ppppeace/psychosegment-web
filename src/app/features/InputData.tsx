@@ -7,8 +7,6 @@ import { usePathname, useSearchParams } from 'next/navigation';
 type Props = {};
 
 export default function InputData({}: Props) {
-    // const ref = useRef<HTMLFormElement>(null);
-    // const [state,formAction] = useFormState(submitSendData,{error:null});
     const [text, setText] = useState('');
     const charLimit = 120;
     const charMin = 80;
@@ -51,6 +49,7 @@ export default function InputData({}: Props) {
                         //         type='submit'
                         //         className={text.length < charMin ? 'disabled' : 'enable'} //'text-base rounded-xl bg-[var(--button)] px-5 py-3 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
                             name='message'
+                            // value={text}
                             onChange={(e) => setTextSearch(e.target.value)}
                             rows={3}
                             placeholder='Please input the some sentence...'
@@ -59,6 +58,7 @@ export default function InputData({}: Props) {
                             className='block w-full rounded-3xl border-0 py-1.5 px-2 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6'
                             defaultValue={''}
                         />
+                       
                         <div className='mt-8'>
                             {/* <Link
                                 href= { "/analysis" + '?' + createQueryString('search',textSearch)}
@@ -68,6 +68,7 @@ export default function InputData({}: Props) {
                                 Submit
                             </Link> */}
                             <Link
+                            
                                 href={'/staticc/' + textSearch}
                                 className='text-base rounded-xl bg-[var(--button)] px-5 py-3 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 '
                             >
