@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '@/assets/logo.png';
 import Down from '@/assets/down.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Navbar() {
     return (
@@ -9,10 +10,10 @@ function Navbar() {
             <Image src={Logo} className='w-16 h-14' alt='Logo' />
             <div>
                 <ul className='list-none  menu flex flex-row'>
-                    <a href='#home'>
+                    <a href='/#home'>
                         <li>HOME</li>
                     </a>
-                    <a href='#mbti-percentages'>
+                    <a href='/#mbti-percentages'>
                         <li>MBTI Percentages</li>
                     </a>
 
@@ -23,18 +24,18 @@ function Navbar() {
                             <Image src={Down} className='w-6 h-6' alt='' />
                         </button>
                         <ul className='menu-sub'>
-                            <a href='#Analysis'>
+                            <Link href='/#Analysis'>
                                 <li>Analysis</li>
-                            </a>
-                            <a href='#Diplomats'>
+                            </Link>
+                            <Link href='/#Diplomats'>
                                 <li>Diplomats</li>
-                            </a>
-                            <a href='#Sentinels'>
+                            </Link>
+                            <Link href='/#Sentinels'>
                                 <li>Sentinels</li>
-                            </a>
-                            <a href='#Explorers'>
+                            </Link>
+                            <Link href='/#Explorers'>
                                 <li>Explorers</li>
-                            </a>
+                            </Link>
                         </ul>
                     </li>
                 </ul>
