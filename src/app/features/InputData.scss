@@ -14,7 +14,7 @@
     text-align: start;
 }
 
-div.submit button {
+div.submit a {
     font-size: 16px;
     border-radius: 12px;
     padding: 12px 20px 12px 20px;
@@ -23,13 +23,13 @@ div.submit button {
     outline-offset: 2px;
 }
 
-button.disabled {
+a.disabled {
     background-color: #d9d9d9;
     color: white;
     cursor: not-allowed;
 }
 
-button.enable {
+a.enable {
     background-color: #ff3311;
     color: white;
 }
