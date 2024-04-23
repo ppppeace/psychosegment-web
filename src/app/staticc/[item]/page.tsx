@@ -25,8 +25,7 @@ export default async function Fastapi({
 
     const data = await getData();
     console.log('data:', data);
-    const mbtiTypeData = await getMBTIByType(data);
-
+    const mbtiTypeData = await getMBTIByType(data.data);
     return (
         <>
             <Navbar />

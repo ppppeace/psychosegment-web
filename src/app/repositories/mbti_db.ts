@@ -11,7 +11,7 @@ interface MyData extends RowDataPacket {
 
 export async function getMBTIByType(data: any) {
     return new Promise<MyData>((resolve, reject) => {
-        const type = evaluateGrade(data['data is']);
+        const type = evaluateGrade(data);
         db.query<MyData[]>('SELECT * FROM data_mbti WHERE type = ?', [type], (err: any, result: any) => {
             if (err) {
                 reject(err);
