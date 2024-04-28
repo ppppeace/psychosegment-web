@@ -8,4 +8,5 @@ const db = mysql.createConnection({
     password: process.env.DB_PASS,
     database: process.env.DB_DATABASE
 });
-export default db as mysql.Connection;
+// export default db as mysql.Connection;
+export default db;
