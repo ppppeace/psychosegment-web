@@ -12,4 +12,4 @@ with open('bayes_classifier.pkl', 'rb') as file:
 def read_item(data: str):
     sentence_to_predict = [data]
     predicted_category = bayes_classifier.predict(sentence_to_predict)
-    return {"data is": list(predicted_category)}
+    return {"data": int(predicted_category)}
