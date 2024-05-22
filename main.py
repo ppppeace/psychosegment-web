@@ -29,14 +29,17 @@ with open('bayes_classifier.pkl', 'rb') as file:
 
 @app.get("/json/{data}")
 def read_item(data: str):
-    thai_util = ThaiTextUtility()
-    sentence_to_predict = [data]
-    sentence_to_predict = sentence_to_predict.strip()
-    sentence_to_predict = clean_func(sentence_to_predict)
-    sentence_to_predict = cut_first_25_words(sentence_to_predict)
-    sentence_to_predict = thai_util.lemmatize(sentence_to_predict)
+    # thai_util = ThaiTextUtility()
+    # sentence_to_predict = [data]
+    # sentence_to_predict = sentence_to_predict.strip()
+    # sentence_to_predict = clean_func(sentence_to_predict)
+    # sentence_to_predict = cut_first_25_words(sentence_to_predict)
+    # sentence_to_predict = thai_util.lemmatize(sentence_to_predict)
     # sentence_to_predict = [string.replace(",", "") for string in sentence_to_predict]
     # sentence_to_predict = ' '.join(sentence_to_predict)
     # predicted_category = bayes_classifier.predict(sentence_to_predict)
-    # return {"data": int(predicted_category)}
-    return sentence_to_predict
+    # # return {"data": int(predicted_category)}
+    # return predicted_category
+    sentence_to_predict = data
+    predicted_category = bayes_classifier.predict([sentence_to_predict])
+    return {"data":int(predicted_category)}
