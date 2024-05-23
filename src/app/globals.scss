@@ -129,28 +129,28 @@ button {
 }
 
 .line-pur {
-    width: 751px;
+    width: inherit;
     height: 0px;
     border: 2px solid var(--purple);
     transform: rotate(0deg);
 }
 
 .line-green {
-    width: 751px;
+    width: inherit;
     height: 0px;
     border: 2px solid var(--green);
     transform: rotate(0deg);
 }
 
 .line-navy {
-    width: 751px;
+    width: inherit;
     height: 0px;
     border: 2px solid var(--navy);
     transform: rotate(0deg);
 }
 
 .line-gold {
-    width: 751px;
+    width: inherit;
     height: 0px;
     border: 2px solid var(--gold);
     transform: rotate(0deg);
@@ -230,8 +230,10 @@ ul.menu li:hover ul.menu-sub {
     transform: rotate(270deg);
     transform-origin: 0 0;
 }
+
 .marketing {
-    max-width: 540px;
+    flex: 1 1 540px;
+    //width: 540px;
     min-height: 380px;
     margin-top: 25px;
     display: flex;
@@ -241,7 +243,9 @@ ul.menu li:hover ul.menu-sub {
 }
 
 .list-marketing {
-    width: 870px;
+    flex: 1 1 870px;
+    //max-width: 870px;
+    // min-width: 200px;
     min-height: 220px;
     margin-top: 48px;
     display: flex;

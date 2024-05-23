@@ -36,7 +36,7 @@ export default function InputData({}: Props) {
     return (
         <div className='text-center color-bg-input'>
             <div className='box '>
-                <h3 className='text-3xl pt-10 font-medium'>
+                <h3 className='pt-5 md:pt-8 lg:pt-10 text-base md:text-xl lg:text-3xl font-medium'>
                     Get To Know Yourself Better <br /> With MBTI Prediction
                 </h3>
                 <div className='grid grid-cols-12 gap-4'>
@@ -50,14 +50,14 @@ export default function InputData({}: Props) {
                             placeholder='Please input the some sentence...'
                             maxLength={charLimit}
                             minLength={charMin}
-                            className='block w-full rounded-3xl border-0 py-1.5 px-6 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6'
+                            className='block w-full rounded-3xl border-0 py-1.5 px-6 shadow-sm ring-1 ring-inset ring-gray-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset text-[8px] md:text-xs lg:text-base sm:leading-6'
                             defaultValue={''}
                         />
-                        <div className='text-base text-end'>
+                        <div className='text-[8px] md:text-xs lg:text-base text-end'>
                             {textSearch.length}/{charLimit}
                         </div>
 
-                        <div className='mt-8'>
+                        <div className='mt-3 md:mt-5 lg:mt-8'>
                             <div className='submit'>
                                 {condition ? (
                                     <a href={'/staticc/' + textSearch} className='shadow enable'>
